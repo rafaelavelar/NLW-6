@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Icones -->
+    <link rel="stylesheet" href="assets/style.css" />
+
     <!-- STYLES -->
     <link rel="stylesheet" href="./style.css" />
 
@@ -23,7 +26,18 @@
     <header id="header">
       <nav class="container">
         <a class="logo" href="#">beauty<span>salon</span>.</a>
-        <div class="menu">...</div>
+        <div class="menu">
+          <ul class="grid">
+            <li><a class="title" href="#home">Inicio</a></li>
+            <li><a class="title" href="#about">Sobre</a></li>
+            <li><a class="title" href="#services">Serviços</a></li>
+            <li><a class="title" href="#testimonials">Depoimentos</a></li>
+            <li><a class="title" href="#contact">Contato</a></li>
+          </ul>
+        </div>
+        <!-- /menu-->
+        <div class="toggle icon-menu"></div>
+        <div class="toggle icon-close"></div>
       </nav>
     </header>
 
@@ -38,7 +52,7 @@
           </div>
 
           <div class="text">
-            <h1>Saúde natural para os seus cabelos</h1>
+            <h2 class="title">Saúde natural para os seus cabelos</h2>
             <p>
               Um salão exclusivo em São Paulo, especializado em tratamentos
               naturais.
@@ -48,8 +62,8 @@
         </div>
       </section>
       <div class="divider-1"></div>
-      <section class="section">
-        <div class="container">
+      <section class="section" id="about">
+        <div class="container grid">
           <img
             src="./assets/foto2.jpg"
             alt="3 mulheres sorrindo e com tesouras e escovas nas mãos"
@@ -73,8 +87,8 @@
           </p>
         </div>
       </section>
-      <section class="section">
-        <div class="container"></div>
+      <section class="section" id="services">
+        <div class="container grid"></div>
         <h2>Serviços</h2>
         <p>
           Com mais de 10 de mercado, o Beautysalon já conquistou clientes de
@@ -222,7 +236,7 @@
           </p>
         </div>
       </section>
-      <section class="section">
+      <section class="section" id="testimonials">
         <h2>Depoismentos de quem já passou por aqui</h2>
         <svg
           width="17"
@@ -237,7 +251,7 @@
           />
         </svg>
       </section>
-      <section class="section">
+      <section class="section" id="contact">
         <h3>Entre em contato com a gente!</h3>
         <p>
           Entre em contato com a Beautysalon, queremos tirar suas dúvidas, ouvir
