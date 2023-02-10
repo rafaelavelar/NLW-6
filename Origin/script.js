@@ -21,13 +21,13 @@ for (const link of links) {
 const header = document.querySelector("#header");
 const navHeight = header.offsetHeight;
 
-window.addEventListener("scroll", function () {
+function changeHeader() {
   if (window.scrollY >= navHeight) {
     header.classList.add("scroll");
   } else {
     header.classList.remove("scroll");
   }
-});
+}
 
 // Testimonial carousel
 const swiper = new Swiper(".swiper-container", {
@@ -53,7 +53,23 @@ scrollReveal.reveal(
   #about .image, #about .text,
   #services header, #services .card,
   #testimonials header, #testimonials .testmonials,
-  #contact .text, #contact .links  
+  #contact .text, #contact .links,
+  footer .brand, footer .social   
 `,
   { interval: 100 }
 );
+
+// botão de voltar ao topo
+const backButton = document.querySelector(".back-to-top");
+function backToTop() {
+  if (window.scrollY >= 560) {
+    backButton.classList.add("show");
+  } else {
+    backButton.classList.remove("show");
+  }
+}
+
+window.addEventListener("scroll", function () {
+  changeHeader();
+  backToTop();
+});
