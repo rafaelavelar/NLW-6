@@ -66,7 +66,7 @@ body {
   background-color: var(--base-color-alt);
 }
 .divider-1 {
-  height: 0.1rem;
+  height: 1px;
   background: linear-gradient(
     270deg,
     hsla(var(--hue), 36%, 57%, 1),
@@ -74,7 +74,7 @@ body {
   );
 }
 .divider-2 {
-  height: 0.1rem;
+  height: 1px;
   background: linear-gradient(
     270deg,
     hsla(var(--hue), 65%, 88%, 0.34),
@@ -116,17 +116,13 @@ body {
   left: 0;
   z-index: 100;
   background-color: var(--body-color);
-  width: 100%;
 }
 #header.scroll {
-  box-shadow: 8px 0 12px rgba(0, 0, 0, 0.1);
-}
-main {
-  margin-top: calc(var(--header-height) + 3.2rem);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
 }
 /* ==== LOGO ====== */
 .logo {
-  font: 700 2.1rem "Poppins", sans-serif;
+  font: 700 2.1rem var(--title-fonts);
   color: var(--title-color);
 }
 .logo span {
@@ -261,7 +257,6 @@ nav.show div.icon-close {
 }
 #home .text p {
   margin-bottom: 3.2rem;
-  max-width: 100%;
 }
 /* ==== About ====== */
 #about {
@@ -299,7 +294,7 @@ nav.show div.icon-close {
   gap: 2.4rem;
 }
 .card {
-  padding: 5.76rem 3.2rem;
+  padding: 5.8rem 3.2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
   border-bottom: 0.4rem solid var(--base-color);
   border-radius: 0.4rem 0.4rem 0 0;
@@ -322,6 +317,8 @@ nav.show div.icon-close {
 #testimonials .container {
   margin-left: 0;
   margin-right: 0;
+  position: relative;
+  overflow: hidden;
 }
 #testimonials header {
   margin-left: 2.4rem;
@@ -341,7 +338,6 @@ nav.show div.icon-close {
 }
 #testimonials blockquote p span {
   font: 700 4.8rem serif;
-
   position: absolute;
   top: -0.9rem;
   left: -2.8rem;
@@ -412,8 +408,11 @@ footer i {
   font-size: 2.4rem;
   color: var(--text-color-light);
 }
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;
+}
 footer .social a {
-  margin-right: 3.2rem;
   transition: 0.3s;
   display: inline-block;
 }
@@ -425,15 +424,15 @@ footer .social a:hover {
   background-color: var(--base-color);
   color: var(--text-color-light);
 
-  font-size: 2.4rem;
-  line-height: 0;
-
   position: fixed;
   right: 1.6rem;
   bottom: 1.6rem;
 
   padding: 0.8rem;
   clip-path: circle();
+
+  font-size: 2.4rem;
+  line-height: 0;
 
   visibility: hidden;
   opacity: 0;
@@ -447,8 +446,6 @@ footer .social a:hover {
   transform: translateY(0);
 }
 /* ==== MEDIA QUERIES =======*/
-/* large devices: +1023 */
-/* medium devices: +767 */
 
 /* extra large devices: +1200 */
 @media (min-width: 1200px) {
@@ -461,7 +458,8 @@ footer .social a:hover {
   .section {
     padding: 16rem 0;
   }
-  .section header {
+  .section header,
+  #testimonials header {
     max-width: 51.2rem;
     text-align: center;
     margin-left: auto;
@@ -472,8 +470,8 @@ footer .social a:hover {
   }
   /* navigation */
   nav .menu {
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
     top: 0;
   }
   nav .menu ul {
@@ -483,6 +481,10 @@ footer .social a:hover {
   nav .menu ul li a.title {
     font: 400 1.6rem var(--body-fonts);
     -webkit-font-smoothing: antialiased;
+  }
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
   }
   nav .icon-menu {
     display: none;
@@ -494,7 +496,7 @@ footer .social a:hover {
   /* home */
   #home .container {
     grid-auto-flow: column;
-    width: fit-content;
+    justify-content: space-between;
     margin: 0 auto;
   }
   #home .image {

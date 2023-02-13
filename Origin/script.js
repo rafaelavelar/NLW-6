@@ -100,4 +100,5 @@ function activateMenuAtCurrentSection() {
 window.addEventListener("scroll", function () {
   changeHeader();
   backToTop();
+  activateMenuAtCurrentSection();
 });
